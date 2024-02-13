@@ -1,0 +1,1246 @@
+ERROR - 2024-02-11 00:47:48 --> mysqli_sql_exception: Unknown column 'contaspagar.id_fornecedor' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contasp...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contasp...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contasp...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contasp...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\app\Controllers\ContasPagar.php(52): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\ContasPagar->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 00:47:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'contaspagar.id_fornecedor' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = :contaspagar.id_usuario:
+AND `contaspagar`.`status` = :contaspagar.status:
+ORDER BY `contaspagar`.`vencimento` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ContasPagar.php(52): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContasPagar->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 00:47:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'contaspagar.id_fornecedor' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = \'1\'
+AND `contaspagar`.`status` = \'Pendente\'
+ORDER BY `contaspagar`.`vencimento` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = \'1\'
+AND `contaspagar`.`status` = \'Pendente\'
+ORDER BY `contaspagar`.`vencimento` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = :contaspagar.id_usuario:
+AND `contaspagar`.`status` = :contaspagar.status:
+ORDER BY `contaspagar`.`vencimento` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\ContasPagar.php(52): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContasPagar->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 00:47:48 --> [Caused by] mysqli_sql_exception: Unknown column 'contaspagar.id_fornecedor' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = \'1\'
+AND `contaspagar`.`status` = \'Pendente\'
+ORDER BY `contaspagar`.`vencimento` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = \'1\'
+AND `contaspagar`.`status` = \'Pendente\'
+ORDER BY `contaspagar`.`vencimento` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = \'1\'
+AND `contaspagar`.`status` = \'Pendente\'
+ORDER BY `contaspagar`.`vencimento` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contaspagar`.`id_contas_pagar`, `fornecedor`.`nome`, `contaspagar`.`vencimento`, `contaspagar`.`valor`, `contaspagar`.`status`
+FROM `contaspagar`
+JOIN `fornecedor` ON `contaspagar`.`id_fornecedor` = `fornecedor`.`id_fornecedor`
+WHERE `contaspagar`.`id_usuario` = :contaspagar.id_usuario:
+AND `contaspagar`.`status` = :contaspagar.status:
+ORDER BY `contaspagar`.`vencimento` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\ContasPagar.php(52): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContasPagar->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 00:48:33 --> mysqli_sql_exception: Unknown column 'contaspagar.id_fornecedor' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contasp...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contasp...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contasp...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contasp...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\app\Controllers\ContasPagar.php(53): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\ContasPagar->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 00:51:34 --> ErrorException: Undefined variable $cliente
+in APPPATH\Views\contasReceber\formulario.php on line 65.
+ 1 APPPATH\Views\contasReceber\formulario.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\app\\Views\\contasReceber\\formulario.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\contasReceber\\formulario.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('contasReceber/formulario', [], true)
+ 5 APPPATH\Controllers\ContasPagar.php(83): view('contasReceber/formulario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContasPagar->novo()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 00:53:14 --> ErrorException: Undefined variable $cliente
+in APPPATH\Views\contasReceber\formulario.php on line 65.
+ 1 APPPATH\Views\contasReceber\formulario.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cliente', 'C:\\xampp\\htdocs\\app\\Views\\contasReceber\\formulario.php', 65)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\contasReceber\\formulario.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('contasReceber/formulario', [], true)
+ 5 APPPATH\Controllers\ContasPagar.php(79): view('contasReceber/formulario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContasPagar->novo()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContasPagar))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 03:00:48 --> ErrorException: Undefined array key "id_contaDre"
+in APPPATH\Views\dre\analitico.php on line 99.
+ 1 APPPATH\Views\dre\analitico.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_contaDre"', 'C:\\xampp\\htdocs\\app\\Views\\dre\\analitico.php', 99)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\dre\\analitico.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dre/analitico', [], true)
+ 5 APPPATH\Controllers\Dre.php(154): view('dre/analitico', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dre->analitico()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dre))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:23:39 --> ErrorException: Undefined array key "id_contaFluxo"
+in APPPATH\Views\relatorio\despesa.php on line 77.
+ 1 APPPATH\Views\relatorio\despesa.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_contaFluxo"', 'C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('relatorio/despesa', [], true)
+ 5 APPPATH\Controllers\Relatorio.php(108): view('relatorio/despesa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:24:19 --> ErrorException: Undefined array key "id_conta_fluxo"
+in APPPATH\Views\relatorio\despesa.php on line 77.
+ 1 APPPATH\Views\relatorio\despesa.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_conta_fluxo"', 'C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('relatorio/despesa', [], true)
+ 5 APPPATH\Controllers\Relatorio.php(108): view('relatorio/despesa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:24:20 --> ErrorException: Undefined array key "id_conta_fluxo"
+in APPPATH\Views\relatorio\despesa.php on line 77.
+ 1 APPPATH\Views\relatorio\despesa.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_conta_fluxo"', 'C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\relatorio\\despesa.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('relatorio/despesa', [], true)
+ 5 APPPATH\Controllers\Relatorio.php(108): view('relatorio/despesa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:24:24 --> ErrorException: Undefined array key "id_receita"
+in APPPATH\Views\relatorio\receita.php on line 77.
+ 1 APPPATH\Views\relatorio\receita.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_receita"', 'C:\\xampp\\htdocs\\app\\Views\\relatorio\\receita.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\relatorio\\receita.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('relatorio/receita', [], true)
+ 5 APPPATH\Controllers\Relatorio.php(65): view('relatorio/receita', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->receita()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 13:26:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.nome,
+                        COALESCE(SUM(a.valor), '00.00') as total
+   ...' at line 3 in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT\r\n       ...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT\r\n       ...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT\r\n       ...')
+#3 C:\xampp\htdocs\system\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT\r\n       ...')
+#4 C:\xampp\htdocs\app\Controllers\Relatorio.php(63): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Relatorio->receita()
+#6 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+#7 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2024-02-11 13:27:41 --> mysqli_sql_exception: Unknown column 'c.id_conta_fluxo' in 'field list' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\system\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...')
+#4 C:\xampp\htdocs\app\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+#6 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+#7 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-02-11 13:27:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 2 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:27:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 3 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 4 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:27:41 --> [Caused by] mysqli_sql_exception: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 4 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 5 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 13:27:47 --> mysqli_sql_exception: Unknown column 'c.id_conta_fluxo' in 'field list' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\system\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...')
+#4 C:\xampp\htdocs\app\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+#6 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+#7 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2024-02-11 13:27:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 2 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:27:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 3 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 4 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:27:47 --> [Caused by] mysqli_sql_exception: Unknown column 'c.id_conta_fluxo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 4 SYSTEMPATH\Model.php(868): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT
+                        c.id_conta_fluxo,
+                        c.nome,
+                        COALESCE(SUM(a.valor), \'00.00\') as total
+                        FROM contafluxo f
+                        LEFT JOIN contadre c on c.id_conta_dre = f.id_conta_dre
+                        LEFT JOIN despesaformabaixa a ON a.id_conta_fluxo = f.id_conta_fluxo
+                                                AND a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\'
+                        WHERE f.id_usuario = \'1\'
+                            AND (a.data_pagamento IS NULL OR a.data_pagamento BETWEEN \'2024-02-01\' and \'2024-02-29\')
+                        GROUP BY c.id_conta_fluxo, c.nome; ')
+ 5 APPPATH\Controllers\Relatorio.php(106): CodeIgniter\Model->__call('query', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Relatorio->despesa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Relatorio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 13:54:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "backup/index.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backup/index.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('backup/index', [], true)
+ 3 APPPATH\Controllers\Backup.php(24): view('backup/index')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Backup->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backup))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:12:56 --> TypeError: number_format(): Argument #1 ($num) must be of type float, array given
+in APPPATH\Views\inicio\index.php on line 50.
+ 1 APPPATH\Views\inicio\index.php(50): number_format([...], 2, ',', '.')
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(59): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:13:08 --> ErrorException: Undefined array key "total"
+in APPPATH\Views\inicio\index.php on line 50.
+ 1 APPPATH\Views\inicio\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(59): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:13:09 --> ErrorException: Undefined array key "total"
+in APPPATH\Views\inicio\index.php on line 50.
+ 1 APPPATH\Views\inicio\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(59): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:13:58 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:14:06 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:14:06 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:14:07 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:14:13 --> ErrorException: Undefined array key "total"
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:14:47 --> ErrorException: Undefined array key 0
+in APPPATH\Controllers\Inicio.php on line 56.
+ 1 APPPATH\Controllers\Inicio.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 56)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:16:06 --> ErrorException: Undefined array key "total"
+in APPPATH\Views\inicio\index.php on line 50.
+ 1 APPPATH\Views\inicio\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(59): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:19:16 --> ErrorException: Undefined property: stdClass::$totalReceber
+in APPPATH\Controllers\Inicio.php on line 54.
+ 1 APPPATH\Controllers\Inicio.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$totalReceber', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:19:17 --> ErrorException: Undefined property: stdClass::$totalReceber
+in APPPATH\Controllers\Inicio.php on line 54.
+ 1 APPPATH\Controllers\Inicio.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$totalReceber', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:19:17 --> ErrorException: Undefined property: stdClass::$totalReceber
+in APPPATH\Controllers\Inicio.php on line 54.
+ 1 APPPATH\Controllers\Inicio.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$totalReceber', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 14:19:17 --> ErrorException: Undefined property: stdClass::$totalReceber
+in APPPATH\Controllers\Inicio.php on line 54.
+ 1 APPPATH\Controllers\Inicio.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$totalReceber', 'C:\\xampp\\htdocs\\app\\Controllers\\Inicio.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 15:00:30 --> ErrorException: Undefined variable $graficoReceberPago
+in APPPATH\Views\inicio\index.php on line 341.
+ 1 APPPATH\Views\inicio\index.php(341): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $graficoReceberPago', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 341)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(125): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:35:46 --> mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancame...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancame...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancame...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancame...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:35:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:35:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:35:46 --> [Caused by] mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:36:43 --> mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancame...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancame...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancame...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancame...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:36:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:36:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:36:43 --> [Caused by] mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:36:44 --> mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancame...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancame...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancame...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancame...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:36:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:36:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:36:44 --> [Caused by] mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = \'1\'
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancamento`.`id_lancamento`, `receita`.`nome`, `lancamento`.`valor`, `lancamento`.`data_pagamento`
+FROM `lancamento`
+JOIN `receita` ON `lancamento`.`id_receita` = `receita`.`id_receita`
+WHERE `lancamento`.`id_usuario` = :lancamento.id_usuario:
+ORDER BY `lancamento`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:37:07 --> mysqli_sql_exception: Unknown column 'lancamento.id_receita' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `lancame...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lancame...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lancame...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lancame...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(148): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2024-02-11 16:45:52 --> mysqli_sql_exception: Unknown column 'receitaformabaixa.valor' in 'field list' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `receita...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `receita...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `receita...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `receita...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(147): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:48:05 --> ErrorException: Undefined variable $valoresDespesas
+in APPPATH\Views\inicio\index.php on line 183.
+ 1 APPPATH\Views\inicio\index.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $valoresDespesas', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 183)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(165): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:49:00 --> ErrorException: Undefined variable $data_pagamento
+in APPPATH\Views\inicio\index.php on line 183.
+ 1 APPPATH\Views\inicio\index.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_pagamento', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 183)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(165): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:49:01 --> ErrorException: Undefined variable $data_pagamento
+in APPPATH\Views\inicio\index.php on line 183.
+ 1 APPPATH\Views\inicio\index.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_pagamento', 'C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php', 183)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\app\\Views\\inicio\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('inicio/index', [], true)
+ 5 APPPATH\Controllers\Inicio.php(165): view('inicio/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:50:46 --> mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafl...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafl...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafl...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafl...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:50:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:50:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:50:46 --> [Caused by] mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `receitaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:51:34 --> mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafl...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafl...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafl...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafl...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:51:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:51:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:51:34 --> [Caused by] mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:51:35 --> mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafl...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafl...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafl...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafl...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-11 16:51:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 2 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 4 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:51:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 4 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 6 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-11 16:51:35 --> [Caused by] mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = \'1\'
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafluxo`.`nome`, `despesaformabaixa`.`valor`, `despesaformabaixa`.`data_pagamento`
+FROM `despesaformabaixa`
+JOIN `contafluxo` ON `receitaformabaixa`.`id_conta_fluxo` = `contafluxo`.`id_conta_fluxo`
+WHERE `despesaformabaixa`.`id_usuario` = :despesaformabaixa.id_usuario:
+ORDER BY `despesaformabaixa`.`data_pagamento` ASC
+ LIMIT 5', [...], false)
+ 5 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+ 7 APPPATH\Controllers\Inicio.php(155): CodeIgniter\BaseModel->findAll(5)
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Inicio->index()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+ERROR - 2024-02-11 16:52:12 --> mysqli_sql_exception: Unknown column 'receitaformabaixa.id_conta_fluxo' in 'on clause' in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `contafl...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `contafl...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `contafl...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `contafl...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(5, 0)
+#6 C:\xampp\htdocs\app\Controllers\Inicio.php(156): CodeIgniter\BaseModel->findAll(5)
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\Inicio->index()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inicio))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}

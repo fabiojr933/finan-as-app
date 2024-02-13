@@ -1,0 +1,69 @@
+ERROR - 2024-02-13 22:02:29 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`financeiro`.`contafluxo`, CONSTRAINT `contafluxo_id_conta_dre_foreign` FOREIGN KEY (`id_conta_dre`) REFERENCES `contadre` (`id_conta_dre`)) in C:\xampp\htdocs\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\system\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `co...', 0)
+#1 C:\xampp\htdocs\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `co...')
+#2 C:\xampp\htdocs\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `co...')
+#3 C:\xampp\htdocs\system\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `co...', Array, false)
+#4 C:\xampp\htdocs\system\Model.php(453): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\xampp\htdocs\system\BaseModel.php(1117): CodeIgniter\Model->doDelete(NULL, false)
+#6 C:\xampp\htdocs\app\Controllers\ContaDre.php(99): CodeIgniter\BaseModel->delete()
+#7 C:\xampp\htdocs\system\CodeIgniter.php(941): App\Controllers\ContaDre->excluir()
+#8 C:\xampp\htdocs\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContaDre))
+#9 C:\xampp\htdocs\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-02-13 22:02:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`financeiro`.`contafluxo`, CONSTRAINT `contafluxo_id_conta_dre_foreign` FOREIGN KEY (`id_conta_dre`) REFERENCES `contadre` (`id_conta_dre`))
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `contadre`
+WHERE `id_conta_dre` = :id_conta_dre:
+AND `id_usuario` = :id_usuario:', [...], false)
+ 2 SYSTEMPATH\Model.php(453): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH\BaseModel.php(1117): CodeIgniter\Model->doDelete(null, false)
+ 4 APPPATH\Controllers\ContaDre.php(99): CodeIgniter\BaseModel->delete()
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContaDre->excluir()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContaDre))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-13 22:02:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`financeiro`.`contafluxo`, CONSTRAINT `contafluxo_id_conta_dre_foreign` FOREIGN KEY (`id_conta_dre`) REFERENCES `contadre` (`id_conta_dre`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `contadre`
+WHERE `id_conta_dre` = \'3\'
+AND `id_usuario` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `contadre`
+WHERE `id_conta_dre` = \'3\'
+AND `id_usuario` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `contadre`
+WHERE `id_conta_dre` = :id_conta_dre:
+AND `id_usuario` = :id_usuario:', [...], false)
+ 4 SYSTEMPATH\Model.php(453): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH\BaseModel.php(1117): CodeIgniter\Model->doDelete(null, false)
+ 6 APPPATH\Controllers\ContaDre.php(99): CodeIgniter\BaseModel->delete()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContaDre->excluir()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContaDre))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
+CRITICAL - 2024-02-13 22:02:29 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`financeiro`.`contafluxo`, CONSTRAINT `contafluxo_id_conta_dre_foreign` FOREIGN KEY (`id_conta_dre`) REFERENCES `contadre` (`id_conta_dre`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('DELETE FROM `contadre`
+WHERE `id_conta_dre` = \'3\'
+AND `id_usuario` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `contadre`
+WHERE `id_conta_dre` = \'3\'
+AND `id_usuario` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `contadre`
+WHERE `id_conta_dre` = \'3\'
+AND `id_usuario` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2787): CodeIgniter\Database\BaseConnection->query('DELETE FROM `contadre`
+WHERE `id_conta_dre` = :id_conta_dre:
+AND `id_usuario` = :id_usuario:', [...], false)
+ 5 SYSTEMPATH\Model.php(453): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH\BaseModel.php(1117): CodeIgniter\Model->doDelete(null, false)
+ 7 APPPATH\Controllers\ContaDre.php(99): CodeIgniter\BaseModel->delete()
+ 8 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\ContaDre->excluir()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ContaDre))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\public\\index.php')
